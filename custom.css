@@ -1,0 +1,13 @@
+.deck-container {
+	background-color: #000;
+}
+
+.deck-container .slide {
+	background-color: transparent;
+}
+
+.deck-container .slide h1 {
+	font-size: 3.5em;
+	color: #fff;
+}
+
