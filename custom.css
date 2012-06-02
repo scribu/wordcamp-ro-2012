@@ -16,3 +16,16 @@
 	color: #D90D3D;
 	border-width: 0;
 }
+
+.deck-container .slide h3 {
+	color: #918C6E;
+}
+
+.centered.slide {
+	text-align: center;
+}
+
+.deck-container .slide pre {
+	text-align: left;
+	border-color: #918C6E;
+}

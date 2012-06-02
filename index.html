@@ -38,7 +38,7 @@
 <section class="vcenter slide" id="title-slide">
 <div class="vcenter">
 	<h1>developing themes</h1>
-	<h2 id="no-crazy" class="slide">without going crazy</h2>
+	<h2 class="slide">without going crazy</h2>
 </div>
 </section>
 
@@ -50,15 +50,77 @@
 	<img class="vcenter" src="appthemes.png" alt="AppThemes">
 </section>
 
-<section class="slide" id="repetition">
+<section class="slide" id="duplication">
 <div class="vcenter">
 	<h1>duplicating code</h1>
-	<h2 id="crazy" class="slide">crazy!</h2>
+	<h2 class="slide">crazy!</h2>
 </div>
 </section>
 
-<section class="slide" id="todo">
-	write something about theme wrappers
+<section class="slide" id="split-html">
+<div class="vcenter">
+	<h1>closing HTML tags in different files</h1>
+</div>
+</section>
+
+<section class="centered slide" id="split-header">
+	<h3>header.php</h3>
+<pre>&lt;html&gt;
+&lt;head&gt;
+    ...
+&lt;/head&gt;
+
+&lt;body &lt;?php body_class(); ?&gt;&gt;
+&lt;div id="page"&gt;
+    &lt;header id="branding" role="banner"&gt;
+        ...
+    &lt;/header&gt;&lt;!-- #branding --&gt;
+
+    &lt;div id="main"&gt;</pre>
+</section>
+
+<section class="centered slide" id="split-footer">
+	<h3>footer.php</h3>
+<pre>    &lt;/div&gt;&lt;!-- #main --&gt;
+
+    &lt;footer id="colophon" role="contentinfo"&gt;
+        ...
+    &lt;/footer&gt;&lt;!-- #colophon --&gt;
+&lt;/div&gt;&lt;!-- #page --&gt;
+
+&lt;?php wp_footer(); ?&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+	<h2 class="slide">confusing!</h2>
+</section>
+
+<section class="slide" id="wrappers">
+	<h1>theme wrappers</h1>
+</section>
+
+<section class="centered slide" id="example-wrapper">
+	<h3>wrapper.php</h3>
+<pre>&lt;html&gt;
+&lt;head&gt;
+    ...
+&lt;/head&gt;
+
+&lt;body &lt;?php body_class(); ?&gt;&gt;
+&lt;div id="page"&gt;
+    &lt;?php get_header(); ?&gt;
+
+    &lt;div id="main"&gt;
+    &lt;?php include app_template_path(); ?&gt;
+    &lt;/div&gt;&lt;!-- #main --&gt;
+
+    &lt;?php get_footer(); ?&gt;
+&lt;/div&gt;&lt;!-- #page --&gt;
+
+&lt;?php wp_footer(); ?&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</pre>
 </section>
 
 <section class="slide" id="all-the-things">
