@@ -3,10 +3,6 @@
 	color: #ECE8CF;
 }
 
-.secondary {
-	color: #D90D3D;
-}
-
 .deck-container .slide {
 	background-color: transparent;
 }
@@ -14,4 +10,9 @@
 .deck-container .slide h1 {
 	font-size: 4em;
 	color: inherit;
+}
+
+.deck-container .slide h2 {
+	color: #D90D3D;
+	border-width: 0;
 }
