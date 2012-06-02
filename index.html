@@ -178,7 +178,7 @@
 &lt;?php get_sidebar(); ?&gt;</pre>
 </section>
 
-<section class="slide" id="typical-php; html-script: true">
+<section class="slide" id="typical-php">
 	<p class="right vcenter">Typical PHP layout:</p>
 </section>
 
@@ -186,21 +186,95 @@
 	<img class="vcenter" src="all-the-things.jpg" alt="functions.php; html-script: true">
 </section>
 
+<section class="center slide" id="level-1">
+	<h3>Level 1</h3>
+<pre class="brush: php">add_filter( 'posts_where', 'my_posts_where', 10, 2 );
+add_action( 'template_redirect', 'my_template_redirect', 10, 2 );
+
+function my_posts_where( $sql, $wp_query ) {
+	if ( $wp_query-&gt;is_main_query() &amp;&amp; $wp_query-&gt;get( 'my_query_var' ) ) {
+		$sql = ...;
+	}
+
+	return $sql;
+}
+
+function my_template_redirect() {
+	global $wp_query;
+
+	if ( $wp_query-&gt;is_main_query() &amp;&amp; $wp_query-&gt;get( 'my_query_var' ) ) {
+		wp_enqueue_script( ... );
+	}
+}</pre>
+</section>
+
+<section class="center slide" id="level-2">
+	<h3>Level 2</h3>
+<pre class="brush: php">class My_View_Controller {
+
+	function __construct() {
+		add_filter( 'posts_where', array( $this, 'posts_where' ), 10, 2 );
+		add_action( 'template_redirect', array( $this, 'template_redirect' ), 10, 2 );
+	}
+
+	function posts_where( $sql, $wp_query ) {
+		if ( $wp_query-&gt;is_main_query() &amp;&amp; $wp_query-&gt;get( 'my_query_var' ) ) {
+			$sql = ...;
+		}
+
+		return $sql;
+	}
+
+	function template_redirect() {
+		global $wp_query;
+
+		if ( $wp_query-&gt;is_main_query() &amp;&amp; $wp_query-&gt;get( 'my_query_var' ) ) {
+			wp_enqueue_script( ... );
+		}
+	}
+}
+
+new My_View_Controller;</pre>
+</section>
+
+<section class="center slide" id="level-3">
+	<h3>Level 3</h3>
+<pre class="brush: php">
+class My_View_Controller extends APP_View_Controller {
+
+	function condition() {
+		return get_query_var( 'my_query_var' );
+	}
+
+	function posts_where( $sql, $wp_query ) {
+		$sql = ...;
+
+		return $sql;
+	}
+
+	function template_redirect() {
+		wp_enqueue_script( ... );
+	}
+}
+
+new My_View_Controller;</pre>
+</section>
+
 <section class="center slide" id="contact">
 <div class="vcenter">
-	<table style="margin: 0 auto">
-		<tr>
-			<td colspan="2"><h1>contact</h1></td>
-		</tr>
-		<tr>
-			<td class="left faded">site:</td>
-			<td class="right">scribu.net</td>
-		</tr>
-		<tr>
-			<td class="left faded">twitter+github:</td>
-			<td class="right">@scribu</td>
-		</tr>
-	</table>
+       <table style="margin: 0 auto">
+               <tr>
+                       <td colspan="2"><h1>contact</h1></td>
+               </tr>
+               <tr>
+                       <td class="left faded">site:</td>
+                       <td class="right">scribu.net</td>
+               </tr>
+               <tr>
+                       <td class="left faded">twitter+github:</td>
+                       <td class="right">@scribu</td>
+               </tr>
+       </table>
 </div>
 </section>
 
