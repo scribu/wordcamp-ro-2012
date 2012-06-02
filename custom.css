@@ -1,5 +1,10 @@
 .deck-container {
-	background-color: #000;
+	background-color: #112838;
+	color: #ECE8CF;
+}
+
+.secondary {
+	color: #D90D3D;
 }
 
 .deck-container .slide {
@@ -7,7 +12,6 @@
 }
 
 .deck-container .slide h1 {
-	font-size: 3.5em;
-	color: #fff;
+	font-size: 4em;
+	color: inherit;
 }
-
