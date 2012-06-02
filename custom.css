@@ -12,10 +12,6 @@
 	color: inherit;
 }
 
-.faded {
-	opacity: 0.5;
-}
-
 .emphasis,
 .deck-container .slide h2 {
 	color: #D90D3D;
@@ -25,6 +21,7 @@
 	border-width: 0;
 }
 
+.faded,
 .deck-container .slide h3 {
 	color: #918C6E;
 }
