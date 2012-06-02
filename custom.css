@@ -12,8 +12,16 @@
 	color: inherit;
 }
 
+.faded {
+	opacity: 0.5;
+}
+
+.emphasis,
 .deck-container .slide h2 {
 	color: #D90D3D;
+}
+
+.deck-container .slide h2 {
 	border-width: 0;
 }
 
@@ -21,11 +29,32 @@
 	color: #918C6E;
 }
 
-.centered.slide {
-	text-align: center;
+.deck-container .slide p {
+	font-size: 2em;
 }
 
 .deck-container .slide pre {
 	text-align: left;
 	border-color: #918C6E;
 }
+
+.slide h1, .slide .vcenter {
+	text-align: inherit;
+}
+
+.left {
+	text-align: left !important;
+}
+
+.right {
+	text-align: right !important;
+}
+
+.center {
+	text-align: center !important;
+}
+
+.upper {
+	text-transform: uppercase;
+}
+
