@@ -30,6 +30,14 @@
 	<link id="transition-css-link" rel="stylesheet" href="transition.css">
 
 	<script src="deck.js/modernizr.custom.js"></script>
+
+	<!-- Syntax highlighter -->
+	<link rel="stylesheet" href="shCore.css">
+	<link rel="stylesheet" href="shCoreMidnight.css">
+
+	<script src="shCore.js"></script>
+	<script src="shBrushXml.js"></script>
+	<script src="shBrushPhp.js"></script>
 </head>
 
 <body class="deck-container">
@@ -70,7 +78,7 @@
 
 <section class="center slide" id="split-header">
 	<h3>header.php</h3>
-<pre>&lt;html&gt;
+<pre class="brush: php; html-script: true">&lt;html&gt;
 &lt;head&gt;
     ...
 &lt;/head&gt;
@@ -86,7 +94,7 @@
 
 <section class="center slide" id="split-footer">
 	<h3>footer.php</h3>
-<pre>    &lt;/div&gt;&lt;!-- #main --&gt;
+<pre class="brush: php; html-script: true">    &lt;/div&gt;&lt;!-- #main --&gt;
 
     &lt;footer id="colophon" role="contentinfo"&gt;
         ...
@@ -99,6 +107,21 @@
 &lt;/html&gt;</pre>
 </section>
 
+<section class="center slide" id="split-index">
+<h3>index.php</h3>
+<pre class="brush: php; html-script: true">&lt;?php get_header(); ?&gt;
+
+&lt;div id="primary"&gt;
+    &lt;div id="content" role="main"&gt;
+        ...
+    &lt;/div&gt;&lt;!-- #content --&gt;
+&lt;/div&gt;&lt;!-- #primary --&gt;
+
+&lt;?php get_sidebar(); ?&gt;
+
+&lt;?php get_footer(); ?&gt;</pre>
+</section>
+
 <section class="slide right" id="wrappers">
 <div class="vcenter">
 	<h1 class="upper">theme wrappers</h1>
@@ -108,7 +131,7 @@
 
 <section class="center slide" id="example-wrapper">
 	<h3>wrapper.php</h3>
-<pre>&lt;html&gt;
+<pre class="brush: php; html-script: true">&lt;html&gt;
 &lt;head&gt;
     ...
 &lt;/head&gt;
@@ -132,39 +155,35 @@
 
 <section class="center slide" id="wrapped-header">
 <h3>header.php <span class="emphasis">(wrapped)</span></h3>
-<pre>    &lt;header id="branding" role="banner"&gt;
+<pre class="brush: php; html-script: true">    &lt;header id="branding" role="banner"&gt;
         ...
     &lt;/header&gt;&lt;!-- #branding --&gt;</pre>
 </section>
 
 <section class="center slide" id="wrapped-footer">
 <h3>footer.php <span class="emphasis">(wrapped)</span></h3>
-<pre>    &lt;footer id="colophon" role="contentinfo"&gt;
+<pre class="brush: php; html-script: true">    &lt;footer id="colophon" role="contentinfo"&gt;
         ...
     &lt;/footer&gt;&lt;!-- #colophon --&gt;</pre>
 </section>
 
 <section class="center slide" id="wrapped-index">
 <h3>index.php <span class="emphasis">(wrapped)</span></h3>
-<pre><s>&lt;?php get_header(); ?&gt;</s>
-
-&lt;div id="primary"&gt;
+<pre class="brush: php; html-script: true">&lt;div id="primary"&gt;
     &lt;div id="content" role="main"&gt;
         ...
     &lt;/div&gt;&lt;!-- #content --&gt;
 &lt;/div&gt;&lt;!-- #primary --&gt;
 
-&lt;?php get_sidebar(); ?&gt;
-
-<s>&lt;?php get_footer(); ?&gt;</s></pre>
+&lt;?php get_sidebar(); ?&gt;</pre>
 </section>
 
-<section class="slide" id="typical-php">
+<section class="slide" id="typical-php; html-script: true">
 	<p class="right vcenter">Typical PHP layout:</p>
 </section>
 
 <section class="slide" id="all-the-things">
-	<img class="vcenter" src="all-the-things.jpg" alt="functions.php">
+	<img class="vcenter" src="all-the-things.jpg" alt="functions.php; html-script: true">
 </section>
 
 <section class="center slide" id="contact">
@@ -221,6 +240,7 @@
 <script>
 $(function() {
 	$.deck('.slide');
+	SyntaxHighlighter.all();
 });
 </script>
 

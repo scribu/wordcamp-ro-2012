@@ -58,3 +58,10 @@
 	text-transform: uppercase;
 }
 
+.syntaxhighlighter table td.code .container {
+	padding-bottom: 5px !important;
+}
+
+.syntaxhighlighter .toolbar {
+	display: none !important;
+}
