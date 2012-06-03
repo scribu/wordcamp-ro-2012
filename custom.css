@@ -63,6 +63,19 @@
 	display: none !important;
 }
 
-.deck-status {
-	display: none !important;
+.deck-container .deck-status {
+	color: #918C6E;
 }
+
+.deck-container .deck-prev-link, .deck-container .deck-next-link {
+	background-color: #918C6E;
+}
+
+.deck-container .deck-prev-link, .deck-container .deck-prev-link:hover, .deck-container .deck-prev-link:focus, .deck-container .deck-prev-link:active, .deck-container .deck-prev-link:visited, .deck-container .deck-next-link, .deck-container .deck-next-link:hover, .deck-container .deck-next-link:focus, .deck-container .deck-next-link:active, .deck-container .deck-next-link:visited {
+	color: #ECE8CF;
+}
+
+.deck-container .deck-prev-link:hover, .deck-container .deck-prev-link:focus, .deck-container .deck-next-link:hover, .deck-container .deck-next-link:focus {
+	background-color: #D90D3D;
+}
+
