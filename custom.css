@@ -62,3 +62,7 @@
 .syntaxhighlighter .toolbar {
 	display: none !important;
 }
+
+.deck-status {
+	display: none !important;
+}
